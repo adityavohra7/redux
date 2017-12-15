@@ -1,9 +1,9 @@
 // @flow
 
-import { visibleTodosSelector } from '../../selectors';
+import { visibleTodosSelector } from '../../selectors'
 
 describe('visibleTodosSelector', () => {
-  let state;
+  let state
   beforeEach(() => {
     state = {
       todos: [
@@ -11,27 +11,27 @@ describe('visibleTodosSelector', () => {
         { id: 1, text: 'Test Todo 2', completed: true }
       ],
       visibilityFilter: 'SHOW_ALL'
-    };
-  });
+    }
+  })
 
   test('should handle SHOW_ALL', () => {
     expect(visibleTodosSelector(state)).toEqual([
       { id: 0, text: 'Test Todo 1', completed: false },
       { id: 1, text: 'Test Todo 2', completed: true }
-    ]);
-  });
+    ])
+  })
 
   test('should handle SHOW_ACTIVE', () => {
-    state.visibilityFilter = 'SHOW_ACTIVE';
+    state.visibilityFilter = 'SHOW_ACTIVE'
     expect(visibleTodosSelector(state)).toEqual([
       { id: 0, text: 'Test Todo 1', completed: false }
-    ]);
-  });
+    ])
+  })
 
   test('should handle SHOW_COMPLETED', () => {
-    state.visibilityFilter = 'SHOW_COMPLETED';
+    state.visibilityFilter = 'SHOW_COMPLETED'
     expect(visibleTodosSelector(state)).toEqual([
       { id: 1, text: 'Test Todo 2', completed: true }
-    ]);
-  });
-});
+    ])
+  })
+})

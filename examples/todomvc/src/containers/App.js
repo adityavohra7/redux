@@ -6,7 +6,7 @@ import Header from '../components/Header'
 import MainSection from '../components/MainSection'
 import * as TodoActions from '../actions'
 
-const App = ({todos, actions}) => (
+const App = ({ todos, actions }) => (
   <div>
     <Header addTodo={actions.addTodo} />
     <MainSection todos={todos} actions={actions} />
@@ -23,10 +23,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    actions: bindActionCreators(TodoActions, dispatch)
+  actions: bindActionCreators(TodoActions, dispatch)
 })
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App)

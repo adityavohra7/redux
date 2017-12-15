@@ -1,14 +1,14 @@
 // @flow
 
-import React from 'react';
+import React from 'react'
 
-import type { Text } from '../types/todos';
+import type { Text } from '../types/todos'
 
 export type Props = {
   onClick: () => void,
   completed: boolean,
   text: Text
-};
+}
 
 const Todo = ({ onClick, completed, text }: Props) => (
   <li
@@ -19,6 +19,6 @@ const Todo = ({ onClick, completed, text }: Props) => (
   >
     {text}
   </li>
-);
+)
 
-export default Todo;
+export default Todo

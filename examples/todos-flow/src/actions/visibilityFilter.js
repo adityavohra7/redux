@@ -3,7 +3,7 @@
 import type {
   VisibilityFilter,
   VisibilityFilterAction
-} from '../types/visibilityFilter';
+} from '../types/visibilityFilter'
 
 export const setVisibilityFilter = (
   filter: VisibilityFilter
@@ -11,5 +11,5 @@ export const setVisibilityFilter = (
   return {
     type: 'SET_VISIBILITY_FILTER',
     filter
-  };
-};
+  }
+}

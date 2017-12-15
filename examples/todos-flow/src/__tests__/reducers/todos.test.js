@@ -1,12 +1,12 @@
 // @flow
 
-import { addTodo, toggleTodo } from '../../actions/todos';
-import todos from '../../reducers/todos';
+import { addTodo, toggleTodo } from '../../actions/todos'
+import todos from '../../reducers/todos'
 
 describe('todos reducer', () => {
   it('should handle initial state', () => {
-    expect(todos(undefined, { type: '@@INIT' })).toEqual([]);
-  });
+    expect(todos(undefined, { type: '@@INIT' })).toEqual([])
+  })
 
   it('should handle ADD_TODO', () => {
     expect(todos([], addTodo('Run the tests'))).toEqual([
@@ -15,7 +15,7 @@ describe('todos reducer', () => {
         completed: false,
         id: 0
       }
-    ]);
+    ])
 
     expect(
       todos(
@@ -39,7 +39,7 @@ describe('todos reducer', () => {
         completed: false,
         id: 1
       }
-    ]);
+    ])
 
     expect(
       todos(
@@ -73,8 +73,8 @@ describe('todos reducer', () => {
         completed: false,
         id: 2
       }
-    ]);
-  });
+    ])
+  })
 
   it('should handle TOGGLE_TODO', () => {
     expect(
@@ -104,6 +104,6 @@ describe('todos reducer', () => {
         completed: false,
         id: 0
       }
-    ]);
-  });
-});
+    ])
+  })
+})

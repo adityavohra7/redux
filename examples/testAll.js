@@ -7,14 +7,14 @@ const path = require('path')
 const { spawnSync } = require('child_process')
 const chalk = require('chalk')
 
-const exampleDirs = fs.readdirSync(__dirname).filter((file) => {
+const exampleDirs = fs.readdirSync(__dirname).filter(file => {
   return fs.statSync(path.join(__dirname, file)).isDirectory()
 })
 
 // Ordering is important here. `npm install` must come first.
 const cmdArgs = [
-  { cmd: 'npm', args: [ 'install', '--progress=false' ] },
-  { cmd: 'npm', args: [ 'test' ] }
+  { cmd: 'npm', args: ['install', '--progress=false'] },
+  { cmd: 'npm', args: ['test'] }
 ]
 
 for (const dir of exampleDirs) {
@@ -35,7 +35,7 @@ for (const dir of exampleDirs) {
       result = spawnSync(cmdArg.cmd, cmdArg.args, opts)
     }
     if (result.status !== 0) {
-      console.log(result);
+      console.log(result)
       throw new Error('Building examples exited with non-zero')
     }
   }

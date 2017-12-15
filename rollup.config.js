@@ -14,7 +14,7 @@ if (env === 'es' || env === 'cjs') {
   config.external = ['symbol-observable']
   config.plugins.push(
     babel({
-      plugins: ['external-helpers'],
+      plugins: ['external-helpers']
     })
   )
 }
@@ -28,7 +28,7 @@ if (env === 'development' || env === 'production') {
     }),
     babel({
       exclude: 'node_modules/**',
-      plugins: ['external-helpers'],
+      plugins: ['external-helpers']
     }),
     replace({
       'process.env.NODE_ENV': JSON.stringify(env)

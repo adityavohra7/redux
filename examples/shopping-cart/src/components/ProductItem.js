@@ -7,10 +7,12 @@ const ProductItem = ({ product, onAddToCartClicked }) => (
     <Product
       title={product.title}
       price={product.price}
-      inventory={product.inventory} />
+      inventory={product.inventory}
+    />
     <button
       onClick={onAddToCartClicked}
-      disabled={product.inventory > 0 ? '' : 'disabled'}>
+      disabled={product.inventory > 0 ? '' : 'disabled'}
+    >
       {product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
     </button>
   </div>
